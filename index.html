@@ -86,6 +86,7 @@ video{border-radius:20px}
 @keyframes tfpulse{0%{box-shadow:0 0 0 0 rgba(217,194,154,.6)}70%{box-shadow:0 0 0 10px rgba(217,194,154,0)}100%{box-shadow:0 0 0 0 rgba(217,194,154,0)}}
 @media (prefers-reduced-motion:no-preference){.tf-pulse{animation:tfpulse 2s ease-out infinite}}
 @media (max-width:760px){.tf-brd{display:none}}
+@media (max-width:760px){.tf-hero{display:block!important;min-height:0!important}.tf-hero-img{top:-20vw!important;bottom:auto!important;height:172vw}.tf-hero-img img{object-position:8% 60%!important}.tf-hero-scrim{top:-20vw!important;bottom:auto!important;height:172.5vw;background:linear-gradient(to bottom,rgba(27,26,24,0) 45%,rgba(27,26,24,0.55) 75%,#1B1A18 100%)!important}.tf-hero-body{box-sizing:border-box;padding-top:108vw!important;gap:22px!important}}
 @keyframes tfin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @keyframes tfimg{from{opacity:0;transform:translateY(32px) scale(.98)}to{opacity:1;transform:none}}
 @keyframes tfdraw{from{opacity:0;transform:translate(-16px,-16px)}to{opacity:1;transform:none}}
@@ -94,7 +95,6 @@ video{border-radius:20px}
 .tf-in2{animation:tfin .7s .12s cubic-bezier(.2,.7,.2,1) both}
 .tf-in3{animation:tfin .7s .24s cubic-bezier(.2,.7,.2,1) both}
 .tf-hero-img{animation:tfimg .7s .18s cubic-bezier(.2,.7,.2,1) both}
-@media (max-width:760px){.tf-hero{display:block!important;min-height:0!important}.tf-hero-img{top:-20vw!important;bottom:auto!important;height:172vw}.tf-hero-img img{object-position:8% 60%!important}.tf-hero-scrim{top:-20vw!important;bottom:auto!important;height:172.5vw;background:linear-gradient(to bottom,rgba(27,26,24,0) 45%,rgba(27,26,24,0.55) 75%,#1B1A18 100%)!important}.tf-hero-body{box-sizing:border-box;padding-top:108vw!important;gap:22px!important}}
 .tf-draw{animation:tfdraw .7s .5s cubic-bezier(.2,.7,.2,1) both}
 [data-anim] .tf-rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-anim] .tf-rv[data-in]{opacity:1;transform:none}
@@ -145,7 +145,7 @@ video{border-radius:20px}
 <div aria-hidden="true" class="tf-hero-scrim" style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(27,26,24,0.82) 0%, rgba(27,26,24,0.55) 34%, rgba(27,26,24,0) 62%), linear-gradient(to top, rgba(27,26,24,0.7) 0%, rgba(27,26,24,0) 40%)"></div>
 <div class="tf-hero-body" style="position: relative; width: 100%; max-width: 1320px; margin: 0 auto; padding: 64px 20px 48px; display: flex; flex-direction: column; gap: 28px">
 <span class="tf-in" style="font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; color: #D9C29A">Método F1 Expert Nails · Thalia Fernandes</span>
-<h1 id="hero-titulo" class="tf-in" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(3.2rem, 7.4vw, 7.6rem); line-height: 0.92; letter-spacing: -0.03em; color: #FFFFFF">Do zero à unha<br><em style="color: #D9C29A">perfeita.</em></h1>
+<h1 id="hero-titulo" class="tf-in" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2.6rem, 6.4vw, 6.6rem); line-height: 0.95; letter-spacing: -0.03em; color: #FFFFFF">Do zero ao<br><em style="color: #D9C29A">aperfeiçoamento.</em></h1>
 <div class="tf-in2" style="display: flex; flex-direction: column; align-items: stretch; gap: 28px">
 <p style="margin: 0; max-width: 30rem; font-size: 1.08rem; color: #E6DFD3">Workshop presencial intensivo de alongamento de unhas, para iniciantes e para quem quer se aperfeiçoar. Molde F1 e molde russo em 2 dias.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
@@ -181,7 +181,7 @@ video{border-radius:20px}
 <div style="border-top: 1px solid #1B1A18; padding-top: 22px"><h3 style="margin: 0 0 10px; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.6rem; line-height: 1.15">“Já fiz cursos e não domino nada.”</h3><p style="margin: 0; color: #5E5850">Aprendi um pouco de tudo em pouco tempo, mas nenhuma técnica ficou bem feita.</p></div>
 </div>
 </div>
-<div class="tf-rv" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 8vw, 96px) 0 clamp(56px, 7vw, 88px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px"><span aria-hidden="true" style="display: block; width: 1px; height: 64px; background: linear-gradient(to bottom, rgba(168,133,82,0), #A88552)"></span><p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.15rem, 4.6vw, 2.3rem); line-height: 1.25; color: #1B1A18"><span style="white-space: nowrap">Foi para resolver isto que a Thalia criou</span><br><span style="white-space: nowrap">o <span style="color: #8C6D3F">Método F1 Expert Nails</span>.</span></p><span aria-hidden="true" style="display: block; width: 1px; height: 64px; background: linear-gradient(to bottom, #A88552, rgba(168,133,82,0))"></span></div>
+<div class="tf-rv" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 8vw, 96px) 0 clamp(56px, 7vw, 88px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px"><span aria-hidden="true" style="display: block; width: 1px; height: 64px; background: linear-gradient(to bottom, rgba(168,133,82,0), #A88552)"></span><p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.15rem, 4.6vw, 2.3rem); line-height: 1.25; color: #1B1A18"><span style="white-space: nowrap">“Foi para resolver isto que eu criei</span><br><span style="white-space: nowrap">o <span style="color: #8C6D3F">Método F1 Expert Nails</span>.”</span></p><p style="margin: -8px 0 0; font-size: 0.74rem; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; color: #8C6D3F">Thalia Fernandes</p><span aria-hidden="true" style="display: block; width: 1px; height: 64px; background: linear-gradient(to bottom, #A88552, rgba(168,133,82,0))"></span></div>
 </section>
 
 <section id="metodo" aria-labelledby="metodo-titulo" style="background: #F7F3EC; padding: 0 20px 120px">
