@@ -33,3 +33,26 @@ window.addEventListener('scroll',onS,{passive:true});window.addEventListener('re
 
 (function(){var b=document.getElementById('tf-ck');if(!b)return;var k='tf-cookie-ok',seen=false;try{seen=localStorage.getItem(k)==='1'}catch(e){}
 if(!seen)b.classList.add('on');var ok=document.getElementById('tf-ck-ok');if(ok)ok.addEventListener('click',function(){try{localStorage.setItem(k,'1')}catch(e){}b.classList.remove('on')});})();
+
+/* ---- Movimento extra (barra de progresso, cabeçalho, imagens, secções) ---- */
+(function(){
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* introdução só na primeira visita da sessão */
+try{var intro=document.querySelector('.tf-intro');if(intro){if(sessionStorage.getItem('tf-intro')){intro.parentNode.removeChild(intro);}else{sessionStorage.setItem('tf-intro','1');}}}catch(e){}
+var bar=null;if(!reduce){bar=document.createElement('div');bar.className='tf-prog';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar);}
+var hd=document.querySelector('header'),tick=false;
+function upd(){tick=false;var y=window.pageYOffset||0,h=document.documentElement.scrollHeight-window.innerHeight;
+ if(bar)bar.style.transform='scaleX('+(h>0?Math.min(1,y/h):0).toFixed(4)+')';
+ if(hd){if(y>12)hd.classList.add('tf-scrolled');else hd.classList.remove('tf-scrolled');}}
+function onS(){if(!tick){tick=true;requestAnimationFrame(upd);}}
+window.addEventListener('scroll',onS,{passive:true});window.addEventListener('resize',onS,{passive:true});upd();
+if(reduce||!('IntersectionObserver' in window))return;
+function watch(els,cls){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('tf-on');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+ els.forEach(function(el){el.classList.add(cls);io.observe(el);});}
+/* imagens em cortina (fora do herói e da galeria rotativa) */
+var figs=[].slice.call(document.querySelectorAll('figure.tf-zoom')).filter(function(f){return !f.closest('.tf-hero')&&!f.querySelector('#g-img')&&f.querySelector(':scope > img, :scope > div > img');});
+figs=figs.filter(function(f){return f.querySelector(':scope > img');});
+watch(figs,'tf-cur');
+/* secções das páginas de curso */
+if(!document.getElementById('topo')){var secs=[].slice.call(document.querySelectorAll('main > section')).slice(1).map(function(s){return s.firstElementChild;}).filter(Boolean);watch(secs,'tf-r2');}
+})();
