@@ -47,7 +47,7 @@ function upd(){tick=false;var y=window.pageYOffset||0,h=document.documentElement
 function onS(){if(!tick){tick=true;requestAnimationFrame(upd);}}
 window.addEventListener('scroll',onS,{passive:true});window.addEventListener('resize',onS,{passive:true});upd();
 if(reduce||!('IntersectionObserver' in window))return;
-function watch(els,cls){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('tf-on');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+function watch(els,cls){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('tf-on');io.unobserve(e.target);}});},{threshold:0.01,rootMargin:'0px 0px 20% 0px'});
  els.forEach(function(el){el.classList.add(cls);io.observe(el);});}
 /* imagens em cortina (fora do herói e da galeria rotativa) */
 var figs=[].slice.call(document.querySelectorAll('figure.tf-zoom')).filter(function(f){return !f.closest('.tf-hero')&&!f.querySelector('#g-img')&&f.querySelector(':scope > img, :scope > div > img');});
@@ -56,3 +56,7 @@ watch(figs,'tf-cur');
 /* secções das páginas de curso */
 if(!document.getElementById('topo')){var secs=[].slice.call(document.querySelectorAll('main > section')).slice(1).map(function(s){return s.firstElementChild;}).filter(Boolean);watch(secs,'tf-r2');}
 })();
+
+/* descarrega todas as fotos logo a seguir ao carregamento, para não haver espera ao fazer scroll */
+(function(){function go(){[].forEach.call(document.querySelectorAll('img[loading="lazy"]'),function(i){i.loading='eager';});}
+if(document.readyState==='complete')setTimeout(go,300);else window.addEventListener('load',function(){setTimeout(go,300);});})();

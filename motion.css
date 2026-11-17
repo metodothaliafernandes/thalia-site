@@ -37,12 +37,12 @@ header.tf-scrolled img{height:44px!important}
 /* Imagens que se revelam como uma cortina e assentam */
 @media (prefers-reduced-motion:no-preference){
 .tf-cur{overflow:hidden}
-.tf-cur > img{clip-path:inset(0 0 100% 0);transform:scale(1.12)}
-.tf-cur.tf-on > img{clip-path:inset(0 0 0 0);transform:scale(1);transition:clip-path 1.1s cubic-bezier(.76,0,.24,1),transform 1.7s cubic-bezier(.2,.7,.2,1)}
+.tf-cur > img{clip-path:inset(0 0 100% 0);transform:scale(1.06)}
+.tf-cur.tf-on > img{clip-path:inset(0 0 0 0);transform:scale(1);transition:clip-path .6s cubic-bezier(.76,0,.24,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .tf-cur.tf-on:hover > img{transform:scale(1.04);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 /* Entrada das secções nas páginas de curso */
 .tf-r2{opacity:0;transform:translateY(26px)}
-.tf-r2.tf-on{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.tf-r2.tf-on{opacity:1;transform:none;transition:opacity .5s cubic-bezier(.2,.7,.2,1),transform .5s cubic-bezier(.2,.7,.2,1)}
 }
 @media (prefers-reduced-motion:reduce){.tf-prog{display:none}}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.tf-card:hover .tf-cur.tf-on > img{transform:scale(1.05)}}
