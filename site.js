@@ -52,9 +52,9 @@ function watch(els,cls){var io=new IntersectionObserver(function(es){es.forEach(
 /* imagens em cortina (fora do herói e da galeria rotativa) */
 var figs=[].slice.call(document.querySelectorAll('figure.tf-zoom')).filter(function(f){return !f.closest('.tf-hero')&&!f.querySelector('#g-img')&&f.querySelector(':scope > img, :scope > div > img');});
 figs=figs.filter(function(f){return f.querySelector(':scope > img');});
-watch(figs,'tf-cur');
+/* fotos sempre visíveis, sem efeito de cortina */
 /* secções das páginas de curso */
-if(!document.getElementById('topo')){var secs=[].slice.call(document.querySelectorAll('main > section')).slice(1).map(function(s){return s.firstElementChild;}).filter(Boolean);watch(secs,'tf-r2');}
+if(!document.getElementById('topo')){var secs=[].slice.call(document.querySelectorAll('main > section:not(.c-hero) .c-eye, main > section:not(.c-hero) .c-h2, main > section:not(.c-hero) .c-lead, main > section:not(.c-hero) .c-info'));watch(secs,'tf-r2');}
 })();
 
 /* descarrega todas as fotos logo a seguir ao carregamento, para não haver espera ao fazer scroll */
